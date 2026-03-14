@@ -157,10 +157,4 @@ curl -X POST http://localhost:5000/analyze \
 
 ---
 
-## License
-
-Copyright (c) 2026 Sachin Sigdel. All rights reserved.
-
----
-
 *Built as a portfolio project to demonstrate ML, NLP, and full-stack Python skills.*
