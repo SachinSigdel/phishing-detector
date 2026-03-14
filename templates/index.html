@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhishGuard — AI Phishing Detector</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app">
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="shield">
+        <svg viewBox="0 0 48 48" fill="none">
+          <path d="M24 4L6 12V24C6 33.94 13.94 43.28 24 46C34.06 43.28 42 33.94 42 24V12L24 4Z" stroke="#00e5ff" stroke-width="2" fill="rgba(0,229,255,0.06)"/>
+          <path d="M16 24L21 29L32 18" stroke="#00e5ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="brand">
+        <h1>PhishGuard</h1>
+        <div class="sub">AI-Powered Phishing Detection</div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="badge"><div class="dot"></div> System Online</div>
+      <div class="badge"><div class="dot amber"></div> ML Active</div>
+      <div class="badge"><div class="dot"></div> LLM Ready</div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Left: Email Input -->
+    <div class="left-col">
+      <div class="panel" style="flex:1">
+        <div class="panel-head">
+          <span class="panel-title">// email_input.raw</span>
+          <div class="dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="panel-body">
+          <textarea id="emailInput" placeholder="Paste email here — headers, body, URLs...&#10;&#10;From: security@paypal-verify.com&#10;Subject: Urgent: Account suspended&#10;..."></textarea>
+          <button class="analyze-btn" id="analyzeBtn" onclick="analyzeEmail()">
+            <span>⟶ &nbsp; Run Threat Analysis</span>
+          </button>
+          <div class="scan-bar" id="scanBar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Results + Chat -->
+    <div class="right-col">
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <div class="big-icon">🛡</div>
+        <p>Paste an email and run analysis to begin</p>
+      </div>
+
+      <!-- Results (hidden until analysis) -->
+      <div class="results-panel" id="resultsPanel">
+        <div class="verdict-card" id="verdictCard">
+          <div class="verdict-main">
+            <div class="verdict-text">
+              <div class="vtag">// threat_assessment</div>
+              <div class="vlabel" id="vlabel"></div>
+              <div class="vsummary" id="vsummary"></div>
+            </div>
+            <div class="score-ring">
+              <svg viewBox="0 0 70 70">
+                <circle class="track" cx="35" cy="35" r="30"/>
+                <circle class="fill" id="scoreRing" cx="35" cy="35" r="30"/>
+              </svg>
+              <div class="score-num-wrap">
+                <div class="snum" id="scoreNum">0</div>
+                <div class="slabel">/ 100</div>
+              </div>
+            </div>
+          </div>
+          <div class="det-bar">
+            <div class="det-item"><div class="det-dot"></div> Rule Engine</div>
+            <div class="det-item"><div class="det-dot"></div> ML Classifier</div>
+            <div class="det-item"><div class="det-dot"></div> LLM Reasoning</div>
+          </div>
+        </div>
+        <div class="signals-card">
+          <div class="panel-head">
+            <span class="panel-title">// signals_detected[]</span>
+            <div class="dots"><span></span><span></span><span></span></div>
+          </div>
+          <div id="signalsList"></div>
+        </div>
+      </div>
+
+      <!-- Chat Panel -->
+      <div class="chat-panel">
+        <div class="panel-head">
+          <span class="panel-title">// ai_followup.chat</span>
+          <span class="ai-model-tag">Llama-3.3-70B</span>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="msg ai">
+            <div class="msg-avatar">AI</div>
+            <div class="msg-bubble">
+              <div class="msg-label">PhishGuard AI</div>
+              Run an analysis first, then ask me anything about the email — why it's suspicious, what the attacker's goal might be, or how to verify if it's legitimate.
+            </div>
+          </div>
+        </div>
+        <div class="chat-hint" id="chatHint">↑ Analyze an email to unlock follow-up questions</div>
+        <div class="chat-input-row">
+          <input class="chat-input" id="chatInput" type="text"
+            placeholder="Ask about this email..."
+            disabled
+            onkeydown="if(event.key==='Enter') sendChat()">
+          <button class="chat-send" id="chatSend" onclick="sendChat()" disabled>⟶</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
