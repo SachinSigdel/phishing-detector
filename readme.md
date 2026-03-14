@@ -159,7 +159,7 @@ curl -X POST http://localhost:5000/analyze \
 
 ## License
 
-MIT License — free to use, modify, and distribute.
+Copyright (c) 2026 Sachin Sigdel. All rights reserved.
 
 ---
 
