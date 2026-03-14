@@ -1,8 +1,8 @@
 flask
 gunicorn
 scikit-learn
-pandas
 numpy
 joblib
 groq
 python-dotenv
+scipy==1.11.4
