@@ -2,7 +2,7 @@
 
 A 3-layer AI-powered phishing email detection system built with Python, scikit-learn, and Llama 3. Paste any suspicious email and get an instant risk assessment with human-readable explanations.
 
-**Live demo:** [your-url-here]
+**Live demo:** https://phishguard-i769.onrender.com
 
 ---
 
