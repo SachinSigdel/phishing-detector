@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS 
 from detector import analyze_email
 from groq import Groq
 from dotenv import load_dotenv
@@ -6,6 +7,7 @@ import os
 
 load_dotenv()
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def index():
