@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — PhishGuard</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='privacy_style.css') }}">
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="shield">
+      <svg viewBox="0 0 48 48" fill="none">
+        <path d="M24 4L6 12V24C6 33.94 13.94 43.28 24 46C34.06 43.28 42 33.94 42 24V12L24 4Z" stroke="#00e5ff" stroke-width="2" fill="rgba(0,229,255,0.06)"/>
+        <path d="M16 24L21 29L32 18" stroke="#00e5ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="brand">
+      <h1>PhishGuard</h1>
+      <div class="sub">AI-Powered Phishing Detection</div>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <div class="page-title">Privacy Policy</div>
+  <div class="page-meta">
+    // Last updated: March 2026 &nbsp;·&nbsp; Effective: March 2026
+  </div>
+
+  <!-- Overview -->
+  <div class="section">
+    <div class="section-tag">// overview</div>
+    <h2>Our Commitment</h2>
+    <p>PhishGuard is an AI-powered phishing email detection tool. We take your privacy seriously. This policy explains what data we access, how we use it, and what we never do with it.</p>
+    <div class="highlight">
+      <div class="hl-label">// key principle</div>
+      PhishGuard does not store, log, or share the content of any email you analyze. Email text is processed in real time and immediately discarded after analysis.
+    </div>
+  </div>
+
+  <!-- What we access -->
+  <div class="section">
+    <div class="section-tag">// data_access</div>
+    <h2>What We Access</h2>
+    <p>When you use the PhishGuard Chrome extension on Gmail, we access the following:</p>
+    <ul>
+      <li>The subject line of the email you are currently viewing</li>
+      <li>The sender's name and email address</li>
+      <li>The body text of the email you are currently viewing</li>
+    </ul>
+    <p>This content is accessed only when you open an email in Gmail and only for the purpose of phishing analysis.</p>
+  </div>
+
+  <!-- What we do with it -->
+  <div class="section">
+    <div class="section-tag">// data_usage</div>
+    <h2>How We Use Your Data</h2>
+    <p>The email content accessed by the extension is sent to the PhishGuard API for analysis. The analysis involves:</p>
+    <ul>
+      <li>Rule-based checks for suspicious patterns (urgency language, spoofed domains, shortened URLs)</li>
+      <li>A machine learning classifier trained on publicly available phishing datasets</li>
+      <li>An AI language model (Llama 3.3-70B via Groq API) for contextual reasoning</li>
+    </ul>
+    <p>The analysis result — a risk score, verdict, and explanation — is returned to your browser and displayed in the extension. The email content is not retained after analysis is complete.</p>
+  </div>
+
+  <!-- What we don't do -->
+  <div class="section">
+    <div class="section-tag">// data_we_never_collect</div>
+    <h2>What We Never Do</h2>
+    <ul>
+      <li>We never store or log the content of your emails</li>
+      <li>We never store your Gmail credentials or authentication tokens</li>
+      <li>We never share your email content with third parties for advertising</li>
+      <li>We never build profiles or track your behavior across sessions</li>
+      <li>We never sell your data to any third party</li>
+      <li>We never access emails you have not opened</li>
+    </ul>
+  </div>
+
+  <!-- Third party services -->
+  <div class="section">
+    <div class="section-tag">// third_party_services</div>
+    <h2>Third-Party Services</h2>
+    <p>PhishGuard uses the following third-party services to perform analysis:</p>
+    <ul>
+      <li><strong style="color:#c8d8f0;">Groq API</strong> — used to run the Llama 3.3-70B language model for AI reasoning. Email text is sent to Groq's API for inference. Groq's privacy policy applies: <a href="https://groq.com/privacy-policy" target="_blank" style="color:var(--accent);">groq.com/privacy-policy</a></li>
+      <li><strong style="color:#c8d8f0;">Render</strong> — our API is hosted on Render's cloud infrastructure. No email data is persisted on Render's servers.</li>
+    </ul>
+    <p>We recommend reviewing Groq's privacy policy to understand how inference requests are handled on their end.</p>
+  </div>
+
+  <!-- Data retention -->
+  <div class="section">
+    <div class="section-tag">// data_retention</div>
+    <h2>Data Retention</h2>
+    <p>PhishGuard retains no email data. Each analysis request is stateless — the email text is sent, analyzed, and the result is returned. Nothing is written to a database or log file.</p>
+    <p>The most recent analysis result is temporarily stored in your browser's local extension storage (<code style="color:var(--accent);">chrome.storage.local</code>) so the popup can display it. This data lives only in your browser and is cleared when you close Chrome or install a new version of the extension.</p>
+  </div>
+
+  <!-- Permissions -->
+  <div class="section">
+    <div class="section-tag">// extension_permissions</div>
+    <h2>Why We Need These Permissions</h2>
+    <ul>
+      <li><strong style="color:#c8d8f0;">Access to mail.google.com</strong> — required to read email content for analysis</li>
+      <li><strong style="color:#c8d8f0;">Storage</strong> — stores the last analysis result locally in your browser for the popup display</li>
+      <li><strong style="color:#c8d8f0;">Active tab</strong> — required to inject the analysis banner into the Gmail page</li>
+      <li><strong style="color:#c8d8f0;">Tabs</strong> — required to open the full PhishGuard web app in a new tab</li>
+    </ul>
+  </div>
+
+  <!-- Changes -->
+  <div class="section">
+    <div class="section-tag">// policy_updates</div>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated effective date. Continued use of PhishGuard after changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <!-- Contact -->
+  <div class="section">
+    <div class="section-tag">// contact</div>
+    <h2>Contact</h2>
+    <p>If you have any questions about this privacy policy or how PhishGuard handles your data, please reach out:</p>
+    <div class="contact-box">
+      <div style="font-size:11px; color:var(--text-dim); line-height:2;">
+        <div>Developer: <span style="color:var(--text);">Sachin Sigdel</span></div>
+        <div>Email: <span style="color:var(--text);">sigdelsachin08@gmail.com</span></div>
+        <div>GitHub: <a href="https://github.com/sachinsigdel" target="_blank">github.com/sachinsigdel</a></div>
+        <div>App: <a href="https://phishguard-i769.onrender.com" target="_blank">phishguard-i769.onrender.com</a></div>
+      </div>
+    </div>
+  </div>
+
+  <a href="/" class="back-link">← Back to PhishGuard</a>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>PHISHGUARD &nbsp;·&nbsp; PRIVACY POLICY</span>
+    <span>© 2026 SACHIN SIGDEL</span>
+  </div>
+
+</div>
+</body>
+</html>

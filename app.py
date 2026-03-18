@@ -13,6 +13,10 @@ CORS(app)
 def index():
     return render_template("index.html")
 
+@app.route("/privacy")
+def privacy():
+    return render_template("privacy.html")
+
 @app.route("/analyze", methods=["POST"])
 def analyze():
     data = request.get_json()
