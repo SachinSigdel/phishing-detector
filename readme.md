@@ -1,6 +1,6 @@
 ---
 title: PhishGuard
-emoji: 🛡
+emoji: 🔒
 colorFrom: blue
 colorTo: cyan
 sdk: docker
