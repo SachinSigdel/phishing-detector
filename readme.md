@@ -1,3 +1,13 @@
+---
+title: PhishGuard
+emoji: 🛡
+colorFrom: blue
+colorTo: cyan
+sdk: docker
+app_file: app.py
+pinned: false
+---
+
 # 🛡️ PhishGuard — AI Phishing Email Detector
 
 A 3-layer AI-powered phishing email detection system built with Python, scikit-learn, and Llama 3. Paste any suspicious email and get an instant risk assessment with human-readable explanations.
