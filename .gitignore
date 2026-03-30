@@ -18,8 +18,8 @@ env/
 .venv/
 
 # ML model files — too large for GitHub (retrain locally)
-model/
-*.pkl
+# model/
+# *.pkl
 
 # Dataset — too large for GitHub
 *.csv
